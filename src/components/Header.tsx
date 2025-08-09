@@ -10,6 +10,8 @@ export default function Header () {
     const location = useLocation();
     let currentView = location.hash;
 
+    const navs = ["About","Services","Projects"];
+
     // to handle when page reaches a certain scrolled position
     useEffect(() => {
         const handleScroll = () => {
@@ -21,7 +23,7 @@ export default function Header () {
     }, []);
 
     return (
-        <header className={`flex items-center justify-between space-x-4 p-4  fixed bg-white/80 w-full backdrop-blur-sm z-20 ${scrolled ? "shadow-md" : ""}`}>
+        <header className={`flex items-center justify-between space-x-4 p-4  fixed bg-white/80 w-full backdrop-blur-sm z-20  ${scrolled ? "shadow-md" : ""}`}>
 
             
             {/* logo for the header */}
@@ -30,12 +32,17 @@ export default function Header () {
             </div>
 
             {/* navigation links for the header */}
-            <ul className="nav flex space-x-8">
+            <ul className="nav hidden opacity-0 md:opacity-100 md:flex space-x-8 font-medium">
                 <li><a href="/#hero" className={currentView == "#hero" ? "active": ""}>Home</a></li>
-                <li><a href="/#about" className={currentView == "#about" ? "active": ""}>About</a></li>
-                <li><a href="/#services" className={currentView == "#services" ? "active": ""}>Services</a></li>
-                <li><a href="/#projects" className={currentView == "#projects" ? "active": ""}>Projects</a></li>
-                <li><a href="/#testimonials" className={currentView == "#testimonials" ? "active" : ""}>Testimonials</a></li>
+
+                {navs.map((nav) => (
+                    <li key={nav}>
+                        <a href={`/#${nav.toLowerCase()}`} className={currentView === `#${nav.toLowerCase()}` ? "active" : ""} >
+                            {nav}
+                        </a>
+                    </li>
+                ))}
+
                 <li><a href="/#contact" className={currentView == "#contact" ? "active": ""}>Contact Me</a></li>
             </ul>
 

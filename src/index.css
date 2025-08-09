@@ -16,14 +16,79 @@ html{
 
 @layer components {
   .nav > *{
-    @apply text-black hover:text-blue-900;
+    @apply  text-black hover:text-blue-950;
   }
 
+  .sectionHeaders{
+    @apply text-4xl font-semibold text-blue-950 text-center md:text-left;
+  }
+
+
   .nav .active {
-    @apply text-blue-900;
+    @apply text-blue-950;
   }
 
   .themeBtn{
     @apply mr-2 cursor-pointer w-6 h-6;
   }
+
+  .skillsTabHead > button{
+    @apply   py-2 px-4 w-full transition-colors duration-200 focus:outline-none;
+  }
+
+ 
+
+  .tabSubContent{
+    /* @apply fle; */
+  }  
+
+  .tabSubContent > div{
+    @apply flex flex-wrap justify-around gap-4 p-5 cursor-pointer;
+  }
+  
+  .tabContent {
+    @apply displayTabContent;
+  }
+
+  .tabContent h3{
+    @apply text-lg font-medium;
+  }
+
+  .projectCard{
+    @apply h-auto  rounded-xl space-y-2 flex flex-col  bg-white/10 backdrop-blur-md border border-white/30  shadow-lg overflow-hidden;
+  }
+
+}
+
+
+@layer utilities{
+
+  .marquee {
+    animation: scroll-marquee 40s linear infinite;
+  }
+
+  @keyframes scroll-marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .displayTabContent {
+    animation: displayTabContent .7s ease-in-out;
+  }
+
+  @keyframes displayTabContent {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+
 }
