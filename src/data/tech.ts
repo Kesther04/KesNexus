@@ -3,7 +3,7 @@ import house from '../assets/codeImg/House-rent.png'
 import phone from '../assets/codeImg/phone-acc.png'
 import blog from '../assets/codeImg/blog.png'
 import odyss from '../assets/codeImg/odysslogin.png';
-import filmWorld from '../assets/codeImg/filmWorld.png';
+import filmWorld from '../assets/codeImg/filmworld.png';
 
 type project = {
         title: string,
