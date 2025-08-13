@@ -14,14 +14,12 @@ type projects = {
 
 export default function AllProjects () {
     const param = useParams();
-    // let navigate = useNavigate();
     let category:any = param.category;
     category == undefined && (category = "all")
     const [currentPj, setCurrentPj] = useState(category); // to swith between copywriting and dev
     const [projects,setProjects] = useState<projects>([]); // to set state of latest projects 
     const [loading, setLoading] = useState<boolean>(true); // to set loader function for latest projects
 
-    // if (currentPj !== "all" || currentPj !== "dev" || currentPj !== "copywriting") navigate("/");  
 
     // to get latest projects data
     useEffect(()=>{ 
