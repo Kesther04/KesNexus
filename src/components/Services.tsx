@@ -72,15 +72,15 @@ export default function Services () {
 
 
     return (
-        <section className="flex flex-col py-20 px-2 md:px-20 min-h-screen space-y-10 bg-gray-50" id="services">
+        <section className="flex flex-col py-20 px-2 md:px-32 min-h-screen space-y-10 bg-gray-200" id="services">
             <h1 className="sectionHeaders">My Services</h1>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 {services.map((service, index) => (
-                    <div key={index} className="p-10 bg-white rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4 ">
+                    <div key={index} className="p-8 bg-white/70 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4">
                         {/* icon */}
-                        <div className="text-3xl mb-4"><Icon icon={service.icon} color="navy" /></div>
+                        <div className="text-4xl mb-4"><Icon icon={service.icon} color="navy" /></div>
                         {/* service */}
                         <h2 className="text-xl font-semibold mb-2">{service.service}</h2>
                         {/* service description */}

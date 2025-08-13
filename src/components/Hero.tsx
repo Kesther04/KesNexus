@@ -2,9 +2,9 @@ import { Download, Mail } from "lucide-react";
 
 export default function Hero () {
     return (
-        <section className="flex flex-col items-center justify-center h-screen bg-hero bg-cover bg-center text-gray-200 z-10 relative" id="hero">
+        <section className="flex flex-col items-center justify-center h-screen bg-hero bg-cover bg-center text-gray-200 z-10 relative" id="home">
             
-            <div className="absolute inset-0 backdrop-blur-lg bg-black/70"></div>
+            <div className="absolute inset-0 backdrop-blur-lg bg-black/40"></div>
 
             <div className="relative z-10 text-center max-w-2xl px-6 py-12 rounded-2xl bg-white/10 backdrop-blur-lg shadow-lg border border-white/20">
                 

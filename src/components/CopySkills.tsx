@@ -30,6 +30,17 @@ export default function CopySkills({ activeTab }: any) {
     ];
 
 
+    function iconForm(item: Skills) {
+      return (
+        <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={item.name}>
+          <span className="h-16 w-16 md:h-32 md:w-32 rounded flex items-center justify-center">
+            <Icon icon={item.icon} color={item.color} className="h-1/2 w-1/2" />
+          </span>
+          <span className="italic">{item.name}</span>
+        </div>
+      );
+    }
+
   return (
     <div className={`${activeTab === "copy" ? "tabContent" : "hidden"}`}>
       <div>
@@ -37,15 +48,7 @@ export default function CopySkills({ activeTab }: any) {
         <div className="tabSubContent">
           <div>
             {copyTypes.map((item) => (
-              <div
-                className="flex flex-col items-center space-x-2 rounded shadow p-1"
-                key={item.name}
-              >
-                <span className="h-16 w-32 rounded flex items-center justify-center">
-                  <Icon icon={item.icon} color={item.color} width="32" height="32" />
-                </span>
-                <span className="italic">{item.name}</span>
-              </div>
+              iconForm(item)
             ))}
           </div>
         </div>
@@ -56,15 +59,7 @@ export default function CopySkills({ activeTab }: any) {
         <div className="tabSubContent">
           <div>
             {copyFrameworks.map((item) => (
-              <div
-                className="flex flex-col items-center space-x-2 rounded shadow p-1"
-                key={item.name}
-              >
-                <span className="h-16 w-32 rounded flex items-center justify-center">
-                  <Icon icon={item.icon} color={item.color} width="32" height="32" />
-                </span>
-                <span className="italic">{item.name}</span>
-              </div>
+              iconForm(item)
             ))}
           </div>
         </div>
@@ -75,15 +70,7 @@ export default function CopySkills({ activeTab }: any) {
         <div className="tabSubContent">
           <div>
             {copyTools.map((item) => (
-              <div
-                className="flex flex-col items-center space-x-2 rounded shadow p-1"
-                key={item.name}
-              >
-                <span className="h-16 w-32 rounded flex items-center justify-center">
-                  <Icon icon={item.icon} color={item.color} width="32" height="32" />
-                </span>
-                <span className="italic">{item.name}</span>
-              </div>
+              iconForm(item)
             ))}
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function Header () {
     const location = useLocation();
     let currentView = location.hash;
 
-    const navs = ["About","Services","Projects"];
+    const navs = ["Home","About","Services","Projects","Contact"];
 
     // to handle when page reaches a certain scrolled position
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function Header () {
 
             {/* navigation links for the header */}
             <ul className="nav hidden opacity-0 md:opacity-100 md:flex space-x-8 font-medium">
-                <li><a href="/#hero" className={currentView == "#hero" ? "active": ""}>Home</a></li>
+
 
                 {navs.map((nav) => (
                     <li key={nav}>
@@ -43,7 +43,6 @@ export default function Header () {
                     </li>
                 ))}
 
-                <li><a href="/#contact" className={currentView == "#contact" ? "active": ""}>Contact Me</a></li>
             </ul>
 
 

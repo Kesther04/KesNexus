@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./pages/Home"
+import AllProjects from "./pages/AllProjects"
 
 function App() {
   const router = createBrowserRouter([
@@ -8,12 +9,8 @@ function App() {
       element: <Home/>
     },
     {
-      path: "/projects/dev",
-      element: <div>Dev Projects</div>
-    },
-    {
-      path: "/projects/copy",
-      element: <div>Copy Projects</div>
+      path: "/projects/:projectType",
+      element: <AllProjects/>
     }
   ])
 

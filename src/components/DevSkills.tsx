@@ -34,6 +34,18 @@ export default function DevSkills({ activeTab }: any) {
     ];
 
 
+    function iconForm (item: Skills) {
+        return (
+            <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={item.name}>
+                <span className="h-16 w-16 md:h-32 md:w-32  rounded flex items-center justify-center">
+                    <Icon icon={item.icon} color={item.color} className="h-1/2 w-1/2" />
+                </span>
+                <span className="italic">{item.name}</span>
+            </div>
+        )
+    } 
+
+
     return (
         <div className={`${activeTab === 'dev' ? 'tabContent' : 'hidden'}`}>
             <div>
@@ -42,12 +54,7 @@ export default function DevSkills({ activeTab }: any) {
                     <div>
                         
                         {frontend.map((item) => (
-                            <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={item.name}>
-                                <span className="h-16 w-32 rounded flex items-center justify-center">
-                                    <Icon icon={item.icon} color={item.color} width="32" height="32" />
-                                </span>
-                                <span className="italic">{item.name}</span>
-                            </div>
+                            iconForm(item)
                         ))}
                         
                     </div>
@@ -59,12 +66,7 @@ export default function DevSkills({ activeTab }: any) {
                 <div className="tabSubContent">
                     <div>
                         {backend.map((item) => (
-                            <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={item.name}>
-                                <span className="h-16 w-32 rounded flex items-center justify-center">
-                                    <Icon icon={item.icon} color={item.color} width="32" height="32" />
-                                </span>
-                                <span className="italic">{item.name}</span>
-                            </div>
+                            iconForm(item)
                         ))}
                     </div>
                 </div>
@@ -75,12 +77,7 @@ export default function DevSkills({ activeTab }: any) {
                 <div className="tabSubContent">
                     <div>
                         {devTools.map((tool) => (
-                            <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={tool.name}>
-                                <span className="h-16 w-32 rounded flex items-center justify-center">
-                                    <Icon icon={tool.icon} color={tool.color} width="32" height="32" />
-                                </span>
-                                <span className="italic">{tool.name}</span>
-                            </div>
+                            iconForm(tool)
                         ))}
                     </div>
                 </div>

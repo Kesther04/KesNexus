@@ -39,7 +39,7 @@ html{
  
 
   .tabSubContent{
-    /* @apply fle; */
+    /* @apply marquee; */
   }  
 
   .tabSubContent > div{
@@ -47,7 +47,7 @@ html{
   }
   
   .tabContent {
-    @apply displayTabContent;
+    @apply displayTabContent ;
   }
 
   .tabContent h3{
@@ -55,7 +55,20 @@ html{
   }
 
   .projectCard{
-    @apply h-auto  rounded-xl space-y-2 flex flex-col  bg-white/10 backdrop-blur-md border border-white/30  shadow-lg overflow-hidden;
+    @apply h-auto  rounded-xl space-y-2 flex flex-col  bg-white/10 backdrop-blur-md border border-white/30  shadow-lg overflow-hidden md:relative ;
+  }
+
+
+  .projectCard > .cardContent {
+    @apply flex flex-col space-y-5 p-5 md:absolute top-0 md:h-full md:text-white  md:hidden transition ease-in-out duration-500;
+  }
+
+  .projectCard:hover img {
+    @apply scale-110;
+  } 
+
+  .projectCard:hover > .cardContent {
+    @apply md:flex;
   }
 
 }
