@@ -9,7 +9,11 @@ function App() {
       element: <Home/>
     },
     {
-      path: "/projects/:projectType",
+      path: "/projects",
+      element: <AllProjects/>
+    },
+    {
+      path: "/projects/:category",
       element: <AllProjects/>
     }
   ])

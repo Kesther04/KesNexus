@@ -1,3 +1,6 @@
+import type React from "react";
+import { Fragment } from "react";
+
 type projectForm = {
     title: string,
     image: string,
@@ -21,7 +24,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                 />
 
                 {/* Overlay on hover */}
-                <span className="md:absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
+                <span className="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
             </div>
 
             {/* Card content */}
@@ -47,11 +50,24 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                 </div>
 
                 {/* Button */}
-                <span>
-                <a  href={project.button[0].link} 
-                className="bg-primary hover:bg-primary/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out">
-                {project.button[0].label}
-                </a>
+                <span className="grid grid-rows-2 grid-cols-1 md:block md:space-x-2 space-y-2 md:space-y-0 ">
+                    {
+                        project.button.map((btn, index) => (
+                            <Fragment key={index}>
+                                {index > 0 ? (
+                                    <a href={btn.link}
+                                        className="bg-gray-500 hover:bg-gray-500/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left">
+                                        {btn.label}
+                                    </a>
+                                ) : (
+                                    <a href={btn.link} 
+                                        className="bg-primary hover:bg-primary/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
+                                        {btn.label}
+                                    </a>
+                                )}
+                            </Fragment>
+                        ))
+                    }
                 </span>
             </div>
         </div>

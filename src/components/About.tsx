@@ -1,4 +1,4 @@
-import profile from "../assets/Images/profile.jpg";
+import profile from "../assets/images/profile.jpg";
 import AboutTab from "./AboutTab";
 
 export default function About () {
