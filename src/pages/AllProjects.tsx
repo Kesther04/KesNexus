@@ -1,8 +1,7 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Projects from "../components/Projects";
 import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { DEV_PROJECT_CRED } from "../data/tech";
