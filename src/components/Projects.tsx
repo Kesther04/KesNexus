@@ -15,13 +15,13 @@ type projects = {
 export default function Projects () {
     const [currentPj, setCurrentPj] = useState<"dev" | "copywriting">("dev"); // to swith between copywriting and dev
     const [projects,setProjects] = useState<projects>([]); // to set state of latest projects 
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
 
 
     // to get latest projects data
     useEffect(()=>{ 
         setProjects(PROJECT_CRED);
-        setLoading(true);
+        setLoading(false);
     },[]);
 
     console.log([...projects].reverse());
@@ -43,11 +43,11 @@ export default function Projects () {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                 {
                 
-                    !loading ? 
+                    loading ? 
                         "Loading..." 
                         :
                     [...projects].slice(-4).reverse().map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                        <ProjectCard key={index} project={project} load={setLoading} />
                     ))
                 
                 }

@@ -6,7 +6,7 @@ type projectForm = {
     button: {label:string, link:string}[]
 };
 
-export default function ProjectCard ({project}: {project: projectForm}) {
+export default function ProjectCard ({project, load}: {project: projectForm, load: React.Dispatch<React.SetStateAction<boolean>>}) {
     return (
 
         <div className="projectCard group">
@@ -16,6 +16,7 @@ export default function ProjectCard ({project}: {project: projectForm}) {
                 <img
                 src={project.image}
                 alt="test_img"
+                onLoad={() => load(false)}
                 className="rounded-t-xl object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110"
                 />
 
