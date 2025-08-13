@@ -1,4 +1,4 @@
-import ProfilePic from "../assets/images/profilePic.jpg";
+import profilePic from "../assets/images/profilePic.jpg";
 import AboutTab from "./AboutTab";
 
 export default function About () {
@@ -15,7 +15,7 @@ export default function About () {
                     <div className="w-auto h-full md:w-1/3 relative group m-2 md:m-0">
                         <span className="w-full h-full block rounded  overflow-hidden">
                             <img
-                                src={ProfilePic}
+                                src={profilePic}
                                 alt="Profile Pic"
                                 className="scale-100 hover:scale-105 transition duration-300 w-full h-full  top-0 left-0 rounded shadow"
                             />
