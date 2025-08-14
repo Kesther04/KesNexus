@@ -29,19 +29,19 @@ export default function Projects () {
         setLoading(false); 
     },[currentPj]);
     return (
-        <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen" id="projects">
+        <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
             
             <h1 className="sectionHeaders">Here are my Projects</h1>
 
             <div className="space-x-4 text-lg">
                 <button 
-                className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-blue-950 border-blue-950` : " border-gray-600 hover:text-white hover:bg-blue-950 hover:border-blue-950" }`} 
+                className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
                 onClick={()=>setCurrentPj("dev")}>
                     Dev Projects
                 </button>
 
                 <button 
-                className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-blue-950 border-blue-950` : " border-gray-600 hover:text-white hover:bg-blue-950 hover:border-blue-950" }`} 
+                className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
                 onClick={()=>setCurrentPj("copywriting")}>
                     Copywriting Projects
                 </button>
@@ -61,13 +61,13 @@ export default function Projects () {
             </div>
 
             <div className="flex justify-center mt-10">
-                <Link 
-                    to={`/projects/${currentPj}`} 
-                    className="border shadow border-blue-950 text-blue-950 rounded-lg font-medium p-2 transition ease-in-out hover:bg-blue-950/20"
+                <a 
+                    href={`/projects/${currentPj}`} 
+                    className="border shadow border-primary text-primary rounded-lg font-medium p-2 transition ease-in-out hover:bg-primary/20"
 
                 >
                    View All {currentPj === "dev" ? "Dev" : "Copywriting"} Projects
-                </Link>
+                </a>
             </div>
 
         </section>

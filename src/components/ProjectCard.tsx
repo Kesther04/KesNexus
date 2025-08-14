@@ -24,7 +24,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                 />
 
                 {/* Overlay on hover */}
-                <span className="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
+                <span className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
             </div>
 
             {/* Card content */}
@@ -61,7 +61,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                                     </a>
                                 ) : (
                                     <a href={btn.link} 
-                                        className="bg-primary hover:bg-primary/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
+                                        className="bg-primary-light hover:bg-primary-light/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
                                         {btn.label}
                                     </a>
                                 )}

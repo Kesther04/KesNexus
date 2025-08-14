@@ -28,20 +28,20 @@ export default function AboutTab() {
             <div className="relative flex justify-around text-xl font-medium border-b border-gray-300 skillsTabHead">
                 <button 
                 ref={devRef} onClick={() => setActiveTab('dev')}
-                className={`${activeTab === 'dev' ? 'text-blue-900' : 'text-gray-500'}`}
+                className={`${activeTab === 'dev' ? 'text-primary' : 'text-gray-500'}`}
                 >
                     Dev Stack
                 </button>
                 
                 <button
                 ref={copyRef} onClick={() => setActiveTab('copy')}
-                className={`${activeTab === 'copy' ? 'text-blue-900' : 'text-gray-500'}`}
+                className={`${activeTab === 'copy' ? 'text-primary' : 'text-gray-500'}`}
                 >
                 Copywriting Stack
                 </button>
 
                 {/* indicator Line */}
-                <span className="absolute bottom-0 h-0.5 bg-blue-900 transition-all duration-300"
+                <span className="absolute bottom-0 h-0.5 bg-primary transition-all duration-300"
                 style={indicatorStyle}
                 />
             </div>

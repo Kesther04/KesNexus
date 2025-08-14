@@ -28,7 +28,7 @@ export const COPY_PROJECT_CRED: project = [
         ]
     },
     {
-        "title":"financial comeback",
+        "title":"Financial Comeback",
         "image":financials,
         "description":"Email for Achieving a financial comeback, to get into the highest echelon of individuals in the world in terms of money.",
         "stack": ["Email Copy", "Finance", "Marketing"],
@@ -40,7 +40,7 @@ export const COPY_PROJECT_CRED: project = [
         ]
     },
     {
-        "title":"gimnasio swole",
+        "title":"Gimnasio Swole",
         "image":swole,
         "description":"Fitness Niche Email that employs a unique copy structure for attaining viewer attention as well as build user desire for offer.",
         "stack": ["Email Copy", "Fitness", "Marketing"],
@@ -52,7 +52,7 @@ export const COPY_PROJECT_CRED: project = [
         ]
     },
     {
-        "title":"golden goose",
+        "title":"Golden Goose",
         "image":goldenGoose,
         "description":"Motivational Email that also contains a call to action that actually helps readers achieve their goals in investment and finances.",
         "stack": ["Email Copy", "Finance", "Marketing"],
@@ -64,7 +64,7 @@ export const COPY_PROJECT_CRED: project = [
         ]
     },
     {
-        "title":"hulk latz",
+        "title":"Hulk Latz",
         "image":hulkLatz,
         "description":"Valuable Fitness Email Copy for Attaining Big Sized Lats with a built and defined Muscle Structure.",
         "stack": ["Email Copy", "Fitness", "Marketing"],
@@ -76,7 +76,7 @@ export const COPY_PROJECT_CRED: project = [
         ]
     },
     {
-        "title":"sales pitch",
+        "title":"Sales Pitch",
         "image":salesPitch,
         "description":"Email Sales Copy that provides valuable information to readers on various ways to improve their sales pitches.",
         "stack": ["Email Copy", "Sales", "Marketing"],

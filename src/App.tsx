@@ -3,12 +3,13 @@ import Home from "./pages/Home"
 import AllProjects from "./pages/AllProjects"
 
 function App() {
+  
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Home/>
     },
-    {
+    { 
       path: "/projects",
       element: <AllProjects/>
     },

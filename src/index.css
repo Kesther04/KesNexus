@@ -16,20 +16,20 @@ html{
 
 @layer components {
   .nav > *{
-    @apply  text-black hover:text-blue-950;
+    @apply  text-black hover:text-primary dark:text-white dark:hover:text-primary-dark;
   }
 
   .sectionHeaders{
-    @apply text-4xl font-semibold text-blue-950 text-center md:text-left;
+    @apply text-4xl font-semibold text-primary text-center md:text-left;
   }
 
 
   .nav .active {
-    @apply text-blue-950;
+    @apply text-primary dark:text-primary-dark;
   }
 
   .themeBtn{
-    @apply mr-2 cursor-pointer w-6 h-6;
+    @apply mr-2 cursor-pointer w-6 h-6 dark:text-white;
   }
 
   .skillsTabHead > button{

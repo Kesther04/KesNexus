@@ -4,7 +4,7 @@ import AboutTab from "./AboutTab";
 export default function About () {
     // This component renders the About section of the portfolio
     return (
-        <section className="flex flex-col py-20 px-2 md:px-32 min-h-screen  space-y-4" id="about">
+        <section className="flex flex-col py-20 px-2 md:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about">
 
             <h1 className="sectionHeaders">About Me</h1>
 
@@ -20,7 +20,7 @@ export default function About () {
                                 className="scale-100 hover:scale-105 transition duration-300 w-full h-full  top-0 left-0 rounded shadow"
                             />
                             {/* Overlay appears on hover */}
-                            <span className="pointer-events-none absolute inset-0 rounded bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            <span className="pointer-events-none absolute inset-0 rounded bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         </span>
                     </div>
 

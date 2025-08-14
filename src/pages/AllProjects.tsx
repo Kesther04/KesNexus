@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -13,12 +13,26 @@ type projects = {
 }[];
 
 export default function AllProjects () {
+    let navigate = useNavigate();
+    
+    // to check current category
+    const catCheck = (category: any) => {
+        if (category == undefined) {
+            return"all"
+        }else if (category == "dev" || category == "copywriting"){
+            return category;
+        }else{
+            return navigate("/");
+        }
+    }
+
     const param = useParams();
     let category:any = param.category;
-    category == undefined && (category = "all")
+    category = catCheck(category);
     const [currentPj, setCurrentPj] = useState(category); // to swith between copywriting and dev
     const [projects,setProjects] = useState<projects>([]); // to set state of latest projects 
     const [loading, setLoading] = useState<boolean>(true); // to set loader function for latest projects
+
 
 
     // to get latest projects data
@@ -45,7 +59,7 @@ export default function AllProjects () {
             <Header/>
 
             <main>
-                <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen" id="projects">
+                <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
                             
                     <h1 className="sectionHeaders">Project Collection</h1>
 
@@ -53,21 +67,21 @@ export default function AllProjects () {
                         A curated collection of my Full-Stack Development and Copywriting projects, crafted to spark ideas and showcase impactful digital experiences.
                     </p>
         
-                    <div className="space-x-0 space-y-4 md:space-y-0 md:space-x-4 text-lg flex flex-col md:flex-row">
+                    <div className="space-x-0 space-y-4 md:space-y-0 md:space-x-4 text-lg flex flex-col md:flex-row text-center ">
                         <Link to={"/projects"}
-                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "all" ?  `text-white bg-blue-950 border-blue-950` : " border-gray-600 hover:text-white hover:bg-blue-950 hover:border-blue-950" }`} 
+                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "all" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
                         onClick={()=>setCurrentPj("all")}>
                             All Projects
                         </Link>
 
                         <Link to={"/projects/dev"}
-                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-blue-950 border-blue-950` : " border-gray-600 hover:text-white hover:bg-blue-950 hover:border-blue-950" }`} 
+                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
                         onClick={()=>setCurrentPj("dev")}>
                             Dev Projects
                         </Link>
         
                         <Link to={"/projects/copywriting"}
-                        className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-blue-950 border-blue-950` : " border-gray-600 hover:text-white hover:bg-blue-950 hover:border-blue-950" }`} 
+                        className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
                         onClick={()=>setCurrentPj("copywriting")}>
                             Copywriting Projects
                         </Link>

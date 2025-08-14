@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
+  darkMode: 'class', // or 'media'
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}','./src/index.css'],
   theme: {
     extend: {
@@ -12,8 +12,9 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: 'navy',
-          hover: 'lightblue',
+          DEFAULT: '#172554', // blue 950
+          dark: '#0f172a', // dark mode color
+          light: 'navy', // navy
         },
       }
     },

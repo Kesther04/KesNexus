@@ -32,7 +32,7 @@ export default function CopySkills({ activeTab }: any) {
 
     function iconForm(item: Skills) {
       return (
-        <div className="flex flex-col items-center space-x-2 shadow rounded p-1" key={item.name}>
+        <div className="flex flex-col items-center space-x-2 shadow rounded p-1 bg-white text-black dark:bg-gray-500" key={item.name}>
           <span className="h-16 w-16 md:h-32 md:w-32 rounded flex items-center justify-center">
             <Icon icon={item.icon} color={item.color} className="h-1/2 w-1/2" />
           </span>

@@ -4,7 +4,7 @@ export default function Hero () {
     return (
         <section className="flex flex-col items-center justify-center h-screen bg-hero bg-cover bg-center text-gray-200 z-10 relative" id="home">
             
-            <div className="absolute inset-0 backdrop-blur-lg bg-black/40"></div>
+            <div className="absolute inset-0 backdrop-blur-lg bg-black/40 dark:bg-black/80"></div>
 
             <div className="relative z-10 text-center max-w-2xl px-6 py-12 rounded-2xl bg-white/10 backdrop-blur-lg shadow-lg border border-white/20">
                 
@@ -23,7 +23,7 @@ export default function Hero () {
                 
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="/kesther_ogbu_cv.docx" download className="flex gap-2 px-6 py-3 bg-blue-950 text-white rounded-lg hover:bg-blue-800 transition">
+                    <a href="/kesther_ogbu_cv.docx" download className="flex gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-blue-800 transition">
                         <Download size={18} className="relative top-0.5" /> Download Resume
                     </a>
                     <a href="#contact" className="flex gap-2 px-6 py-3 border border-white/30 text-white rounded-lg hover:bg-white/10 transition">
