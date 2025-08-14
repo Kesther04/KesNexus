@@ -2,7 +2,6 @@ import { DEV_PROJECT_CRED } from '../data/tech'
 import { COPY_PROJECT_CRED } from '../data/copy';
 import { useEffect, useState } from "react"
 import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom"
 
 type projects = {
         title: string,
