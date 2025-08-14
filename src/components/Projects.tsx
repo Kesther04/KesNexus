@@ -2,6 +2,7 @@ import { DEV_PROJECT_CRED } from '../data/tech'
 import { COPY_PROJECT_CRED } from '../data/copy';
 import { useEffect, useState } from "react"
 import ProjectCard from "./ProjectCard";
+import { Link } from 'react-router-dom';
 
 type projects = {
         title: string,
@@ -60,13 +61,13 @@ export default function Projects () {
             </div>
 
             <div className="flex justify-center mt-10">
-                <a 
-                    href={`/projects/${currentPj}`} 
+                <Link 
+                    to={`/projects/${currentPj}`} 
                     className="border shadow border-primary text-primary rounded-lg font-medium p-2 transition ease-in-out hover:bg-primary/20"
 
                 >
                    View All {currentPj === "dev" ? "Dev" : "Copywriting"} Projects
-                </a>
+                </Link>
             </div>
 
         </section>
