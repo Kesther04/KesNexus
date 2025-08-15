@@ -8,37 +8,62 @@ type Skills = {
 
 export default function DevSkills({ activeTab }: any) {
 
-    const frontend:Skills[] = [
-    { name: "HTML", icon: "simple-icons:html5", color: "#E34F26" },
-    { name: "CSS", icon: "simple-icons:css3", color: "#1572B6" },
-    { name: "JavaScript", icon: "simple-icons:javascript", color: "#F7DF1E" },
-    { name: "TypeScript", icon: "simple-icons:typescript", color: "#3178C6" },
-    { name: "React", icon: "simple-icons:react", color: "#61DAFB" },
-    { name: "TailwindCSS", icon: "simple-icons:tailwindcss", color: "#06B6D4" },
-    { name: "React Native (Expo)", icon: "simple-icons:expo", color: "#000020" }
+    // const frontend:Skills[] = [
+    // { name: "HTML", icon: "simple-icons:html5", color: "#E34F26" },
+    // { name: "CSS", icon: "simple-icons:css3", color: "#1572B6" },
+    // { name: "JavaScript", icon: "simple-icons:javascript", color: "#F7DF1E" },
+    // { name: "TypeScript", icon: "simple-icons:typescript", color: "#3178C6" },
+    // { name: "React", icon: "simple-icons:react", color: "#61DAFB" },
+    // { name: "TailwindCSS", icon: "simple-icons:tailwindcss", color: "#06B6D4" },
+    // { name: "React Native (Expo)", icon: "simple-icons:expo", color: "#000020" }
+    // ];
+
+    // const backend:Skills[] = [
+    // { name: "PHP", icon: "simple-icons:php", color: "#777BB4" },
+    // { name: "Node.js", icon: "simple-icons:nodedotjs", color: "#339933" },
+    // { name: "Express.js", icon: "simple-icons:express", color: "#000000" },
+    // { name: "MongoDB", icon: "simple-icons:mongodb", color: "#47A248" },
+    // { name: "MySQL", icon: "simple-icons:mysql", color: "#4479A1" }
+    // ];
+
+    // const devTools:Skills[] = [
+    // { name: "Github", icon: "simple-icons:github", color: "#181717" },
+    // { name: "Figma", icon: "simple-icons:figma", color: "#F24E1E" },
+    // { name: "Netlify", icon: "simple-icons:netlify", color: "#00C7B7" },
+    // { name: "Vercel", icon: "simple-icons:vercel", color: "#000000" }
+    // ];
+
+    const frontend: Skills[] = [
+    { name: "HTML", icon: "simple-icons:html5", color: "text-orange-600" }, // #E34F26 → orange-600
+    { name: "CSS", icon: "simple-icons:css3", color: "text-blue-600" }, // #1572B6 → blue-600
+    { name: "JavaScript", icon: "simple-icons:javascript", color: "text-yellow-400" }, // #F7DF1E → yellow-400
+    { name: "TypeScript", icon: "simple-icons:typescript", color: "text-blue-500" }, // #3178C6 → blue-500
+    { name: "React", icon: "simple-icons:react", color: "text-cyan-300" }, // #61DAFB → cyan-300
+    { name: "TailwindCSS", icon: "simple-icons:tailwindcss", color: "text-cyan-400" }, // #06B6D4 → cyan-400
+    { name: "React Native (Expo)", icon: "simple-icons:expo", color: "text-gray-900 dark:text-gray-100" } // #000020 → gray-900
     ];
 
-    const backend:Skills[] = [
-    { name: "PHP", icon: "simple-icons:php", color: "#777BB4" },
-    { name: "Node.js", icon: "simple-icons:nodedotjs", color: "#339933" },
-    { name: "Express.js", icon: "simple-icons:express", color: "#000000" },
-    { name: "MongoDB", icon: "simple-icons:mongodb", color: "#47A248" },
-    { name: "MySQL", icon: "simple-icons:mysql", color: "#4479A1" }
+    const backend: Skills[] = [
+    { name: "PHP", icon: "simple-icons:php", color: "text-indigo-400" }, // #777BB4 → indigo-400
+    { name: "Node.js", icon: "simple-icons:nodedotjs", color: "text-green-600" }, // #339933 → green-600
+    { name: "Express.js", icon: "simple-icons:express", color: "text-black dark:text-white" }, // #000000 → black
+    { name: "MongoDB", icon: "simple-icons:mongodb", color: "text-green-500" }, // #47A248 → green-500
+    { name: "MySQL", icon: "simple-icons:mysql", color: "text-sky-700" } // #4479A1 → sky-700
     ];
 
-    const devTools:Skills[] = [
-    { name: "Github", icon: "simple-icons:github", color: "#181717" },
-    { name: "Figma", icon: "simple-icons:figma", color: "#F24E1E" },
-    { name: "Netlify", icon: "simple-icons:netlify", color: "#00C7B7" },
-    { name: "Vercel", icon: "simple-icons:vercel", color: "#000000" }
+    const devTools: Skills[] = [
+    { name: "Github", icon: "simple-icons:github", color: "text-gray-900 dark:text-gray-100" }, // #181717 → gray-900
+    { name: "Figma", icon: "simple-icons:figma", color: "text-orange-500" }, // #F24E1E → orange-500
+    { name: "Netlify", icon: "simple-icons:netlify", color: "text-teal-400" }, // #00C7B7 → teal-400
+    { name: "Vercel", icon: "simple-icons:vercel", color: "text-black dark:text-white" } // #000000 → black
     ];
 
 
     function iconForm (item: Skills) {
         return (
-            <div className="flex flex-col items-center space-x-2 shadow rounded p-1 bg-white text-black dark:bg-gray-500" key={item.name}>
+            <div className="flex flex-col items-center space-x-2  rounded p-1 " key={item.name}>
                 <span className="h-16 w-16 md:h-32 md:w-32  rounded flex items-center justify-center">
-                    <Icon icon={item.icon} color={item.color} className="h-1/2 w-1/2" />
+                    <Icon icon={item.icon} className={`h-1/2 w-1/2 ${item.color}`} />
                 </span>
                 <span className="italic">{item.name}</span>
             </div>

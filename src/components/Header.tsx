@@ -2,6 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Sun, Moon, Frame } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+// import Logo from "../assets/Logo";
+import logo from "../assets/logo.jpg"
+
 
 // This is the header component that will be used across the application
 export default function Header () { 
@@ -34,7 +37,11 @@ export default function Header () {
             
             {/* logo for the header */}
             <div className="cursor-pointer flex items-center">
-                <Link to="/"><Frame className="w-8 h-8 dark:text-white" /></Link>
+                {/* <Link to="/"><Frame className="w-8 h-8 dark:text-white" /></Link> */}
+                <img src={logo} alt="logo" width={50} />
+                {/* <Link to="/"> */}
+                    {/* <Logo styles={"w-8 h-8"}/> */}
+                {/* </Link> */}
             </div>
 
             {/* navigation links for the header */}

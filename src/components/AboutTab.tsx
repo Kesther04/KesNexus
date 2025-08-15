@@ -25,23 +25,23 @@ export default function AboutTab() {
     return (
         <div className="w-full  mx-auto">
             {/* tab header */}
-            <div className="relative flex justify-around text-xl font-medium border-b border-gray-300 skillsTabHead">
+            <div className="relative flex justify-around text-xl font-medium border-b border-gray-300  dark:border-gray-600  skillsTabHead">
                 <button 
                 ref={devRef} onClick={() => setActiveTab('dev')}
-                className={`${activeTab === 'dev' ? 'text-primary' : 'text-gray-500'}`}
+                className={`${activeTab === 'dev' ? 'text-primary dark:text-primary-dark' : 'text-gray-500 dark:text-gray-400'}`}
                 >
                     Dev Stack
                 </button>
                 
                 <button
                 ref={copyRef} onClick={() => setActiveTab('copy')}
-                className={`${activeTab === 'copy' ? 'text-primary' : 'text-gray-500'}`}
+                className={`${activeTab === 'copy' ? 'text-primary dark:text-primary-dark' : 'text-gray-500 dark:text-gray-400'}`}
                 >
                 Copywriting Stack
                 </button>
 
                 {/* indicator Line */}
-                <span className="absolute bottom-0 h-0.5 bg-primary transition-all duration-300"
+                <span className="absolute bottom-0 h-0.5 bg-primary dark:bg-primary-dark transition-all duration-300"
                 style={indicatorStyle}
                 />
             </div>

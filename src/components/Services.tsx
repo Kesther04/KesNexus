@@ -80,7 +80,7 @@ export default function Services () {
                 {services.map((service, index) => (
                     <div key={index} className="p-8 bg-white/70 dark:bg-black/70 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4 dark:text-white">
                         {/* icon */}
-                        <div className="text-4xl mb-4"><Icon icon={service.icon} className='text-primary-light' /></div>
+                        <div className="text-4xl mb-4"><Icon icon={service.icon} className='text-primary-light dark:text-primary-dark' /></div>
                         {/* service */}
                         <h2 className="text-xl font-semibold mb-2">{service.service}</h2>
                         {/* service description */}

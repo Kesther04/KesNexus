@@ -24,7 +24,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                 />
 
                 {/* Overlay on hover */}
-                <span className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
+                <span className="absolute inset-0 bg-primary/80 dark:bg-primary-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 "></span>
             </div>
 
             {/* Card content */}
@@ -41,7 +41,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                     {project?.stack?.map((tech:string) => (
                     <span
                         key={tech}
-                        className="text-sm text-gray-500 md:text-gray-50 dark:text-gray-300 border rounded-xl px-2 py-1"
+                        className="text-sm text-gray-500 dark:text-gray-300 md:text-gray-50 dark:md:text-gray-800 border dark:md:border-gray-800 rounded-xl px-2 py-1 "
                     >
                         {tech}
                     </span>
@@ -56,12 +56,12 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                             <Fragment key={index}>
                                 {index > 0 ? (
                                     <a href={btn.link}
-                                        className="bg-gray-500 hover:bg-gray-500/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left">
+                                        className="bg-gray-500 hover:bg-gray-500/50 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left">
                                         {btn.label}
                                     </a>
                                 ) : (
                                     <a href={btn.link} 
-                                        className="bg-primary-light hover:bg-primary-light/80 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
+                                        className="bg-primary-light hover:bg-primary-light/50 dark:bg-primary-dark dark:hover:bg-primary-dark/40 text-white dark:hover:text-white dark:text-gray-800 rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
                                         {btn.label}
                                     </a>
                                 )}

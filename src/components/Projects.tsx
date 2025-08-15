@@ -33,15 +33,15 @@ export default function Projects () {
             
             <h1 className="sectionHeaders">Here are my Projects</h1>
 
-            <div className="space-x-4 text-lg">
+            <div className=" projectBtn">
                 <button 
-                className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
+                className={` ${currentPj === "dev" ?  `current` : "" }`} 
                 onClick={()=>setCurrentPj("dev")}>
                     Dev Projects
                 </button>
 
                 <button 
-                className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
+                className={`${currentPj === "copywriting" ?  "current" : "" }`} 
                 onClick={()=>setCurrentPj("copywriting")}>
                     Copywriting Projects
                 </button>
@@ -63,7 +63,7 @@ export default function Projects () {
             <div className="flex justify-center mt-10">
                 <Link 
                     to={`/projects/${currentPj}`} 
-                    className="border shadow border-primary text-primary rounded-lg font-medium p-2 transition ease-in-out hover:bg-primary/20"
+                    className="border shadow border-primary text-primary dark:border-primary-dark dark:text-primary-dark rounded-lg font-medium p-2 transition ease-in-out hover:bg-primary/20 dark:hover:bg-primary-dark/20"
 
                 >
                    View All {currentPj === "dev" ? "Dev" : "Copywriting"} Projects

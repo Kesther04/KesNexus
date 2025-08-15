@@ -20,7 +20,7 @@ export default function About () {
                                 className="scale-100 hover:scale-105 transition duration-300 w-full h-full  top-0 left-0 rounded shadow"
                             />
                             {/* Overlay appears on hover */}
-                            <span className="pointer-events-none absolute inset-0 rounded bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            <span className="pointer-events-none absolute inset-0 rounded bg-primary/40 dark:bg-primary-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         </span>
                     </div>
 

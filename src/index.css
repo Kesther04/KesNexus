@@ -20,8 +20,9 @@ html{
   }
 
   .sectionHeaders{
-    @apply text-4xl font-semibold text-primary text-center md:text-left;
+    @apply text-4xl font-semibold text-primary dark:text-primary-dark text-center md:text-left;
   }
+
 
 
   .nav .active {
@@ -54,13 +55,32 @@ html{
     @apply text-lg font-medium;
   }
 
+  /* for Projects Component */
+  .projectBtn {
+    @apply space-x-4 text-lg;
+  }
+
+  /* for AllProjects Component */
+  .projectLinks{
+    @apply space-x-0 space-y-4 md:space-y-0 md:space-x-4 text-lg flex flex-col md:flex-row text-center ;
+  }
+
+  .projectBtn > button, .projectLinks > a{
+    @apply rounded p-2 border  transition ease-in-out focus:outline-none border-gray-600 hover:text-white dark:hover:text-gray-800 hover:bg-primary hover:border-primary dark:hover:bg-primary-dark dark:hover:border-primary-dark;
+  }
+
+  .projectBtn > button.current, .projectLinks > a.current{
+    @apply text-white dark:text-gray-800 bg-primary border-primary dark:bg-primary-dark dark:border-primary-dark;
+  }
+
+  /* for projectCard Component */
   .projectCard{
-    @apply h-auto  rounded-xl space-y-2 flex flex-col  bg-white/10 backdrop-blur-md border border-white/30  shadow-lg overflow-hidden md:relative ;
+    @apply h-auto  rounded-xl space-y-2 flex flex-col  bg-white/10 backdrop-blur-md  shadow-lg overflow-hidden md:relative ;
   }
 
 
   .projectCard > .cardContent {
-    @apply flex flex-col space-y-5 p-5 md:absolute top-0 md:h-full md:text-white  md:hidden transition ease-in-out duration-500;
+    @apply flex flex-col space-y-5 p-5 md:absolute top-0 md:h-full md:text-white dark:md:text-gray-800  md:hidden transition ease-in-out duration-500;
   }
 
   .projectCard:hover img {

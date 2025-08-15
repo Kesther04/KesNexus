@@ -67,21 +67,21 @@ export default function AllProjects () {
                         A curated collection of my Full-Stack Development and Copywriting projects, crafted to spark ideas and showcase impactful digital experiences.
                     </p>
         
-                    <div className="space-x-0 space-y-4 md:space-y-0 md:space-x-4 text-lg flex flex-col md:flex-row text-center ">
+                    <div className="projectLinks">
                         <Link to={"/projects"}
-                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "all" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
+                        className={`${currentPj === "all" ? "current" : "" }`} 
                         onClick={()=>setCurrentPj("all")}>
                             All Projects
                         </Link>
 
                         <Link to={"/projects/dev"}
-                        className={`rounded p-2 border  transition ease-in-out focus:outline-none ${currentPj === "dev" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
+                        className={`${currentPj === "dev" ?  "current" : "" }`} 
                         onClick={()=>setCurrentPj("dev")}>
                             Dev Projects
                         </Link>
         
                         <Link to={"/projects/copywriting"}
-                        className={`rounded p-2 border transition ease-in-out focus:outline-none ${currentPj === "copywriting" ?  `text-white bg-primary border-primary` : " border-gray-600 hover:text-white hover:bg-primary hover:border-primary" }`} 
+                        className={`${currentPj === "copywriting" ?  "current" : "" }`} 
                         onClick={()=>setCurrentPj("copywriting")}>
                             Copywriting Projects
                         </Link>
