@@ -63,7 +63,7 @@ export default function Projects () {
             <div className="flex justify-center mt-10">
                 <Link 
                     to={`/projects/${currentPj}`} 
-                    className="border shadow border-primary text-primary  hover:text-white dark:border-primary-dark dark:text-primary-dark rounded-lg font-medium p-2 transition ease-in-out  hover:bg-primary/20 dark:hover:bg-primary-dark/20"
+                    className="border shadow border-primary text-primary   dark:border-primary-dark dark:text-primary-dark rounded-lg font-medium p-2 transition ease-in-out  hover:bg-primary/20 dark:hover:bg-primary-dark/20"
 
                 >
                    View All {currentPj === "dev" ? "Dev" : "Copywriting"} Projects
