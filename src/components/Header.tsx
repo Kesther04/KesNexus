@@ -2,8 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-// import Logo from "../assets/Logo";
-import logo from "../assets/logo.jpg"
 import KesnexusLogo from "../assets/Logo";
 
 
