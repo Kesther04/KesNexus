@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-import KesnexusLogo from "../assets/Logo";
+import LogoAttachment from "../assets/LogoAttachment";
+import Logo from "../assets/Logo";
 
 
 // This is the header component that will be used across the application
@@ -31,17 +32,14 @@ export default function Header () {
     
     
     return (
-        <header className={`flex items-center justify-between space-x-4 p-4  fixed bg-white/80 dark:bg-black/80 w-full backdrop-blur-sm z-20  ${scrolled ? "shadow-md" : ""}`}>
+        <header className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-20  fixed bg-white/80 dark:bg-black/80 w-full backdrop-blur-sm z-20  ${scrolled ? "shadow-md" : ""}`}>
 
             
             {/* logo for the header */}
-            <div className="cursor-pointer flex items-center">
-                <Link to="/" className="relative flex items-center justify-center  dark:text-white"> 
-                    <KesnexusLogo className="relative w-16 h-16 text-primary dark:text-primary-dark"/> 
-                    <small className="font-medium text-xl absolute left-11">
-                        NEXUS 
-                        <span className="text-primary dark:text-primary-dark text-3xl">.</span>
-                    </small> 
+            <div className="relative cursor-pointer flex items-center">
+                <Link to="/" className="absolute flex items-center justify-center  dark:text-white"> 
+                    <Logo className="w-14 h-14 text-primary dark:text-primary-dark "/> 
+                    <LogoAttachment/>
                 </Link>
             </div>
 
