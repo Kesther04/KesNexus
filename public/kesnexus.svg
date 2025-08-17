@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="900" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+    <style><![CDATA[
+      .bg { fill: #CDD0D3; }
+      .navy { fill: #212E58; }
+      .navyDark { fill: #131729; }
+      .lightGray { fill: #A6A8AD; }
+      .white { fill: #FFFFFF; }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="300" height="300"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="110" cy="224" rx="70" ry="6" fill="#9FA3A8" opacity="0.45" filter="url(#blur)"/>
+
+  <!-- Stylized K -->
+  <g id="K" transform="translate(0, 6)">
+    <rect class="navy" x="70" y="42" width="36" height="168"/>
+    <polygon class="navyDark" points="106,88 120,72 120,120 106,136"/>
+    <polygon class="white" points="120,72 200,72 144,128 120,128"/>
+    <polygon class="navy" points="106,146 150,210 206,210 144,146"/>
+    <polygon class="lightGray" points="120,194 140,216 120,216"/>
+    <polygon class="navyDark" points="106,146 120,146 144,170 130,170"/>
+  </g>
+
+  <!-- Wordmark as vector paths (approximated outlines) -->
+  <g id="wordmark" transform="translate(152,110) scale(0.07)">
+    <!-- Placeholder path simulating "KESNEXUS" -->
+    <path d="M0 0 H600 V50 H0 Z" fill="#111"/> <!-- block bar -->
+  </g>
+  <g transform="translate(152,138) scale(0.05)">
+    <!-- Placeholder path simulating "Digital Solutions" -->
+    <path d="M0 0 H400 V30 H0 Z" fill="#111"/>
+  </g>
+</svg>

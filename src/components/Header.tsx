@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 // import Logo from "../assets/Logo";
 import logo from "../assets/logo.jpg"
+import KesnexusLogo from "../assets/Logo";
 
 
 // This is the header component that will be used across the application
@@ -37,11 +38,13 @@ export default function Header () {
             
             {/* logo for the header */}
             <div className="cursor-pointer flex items-center">
-                {/* <Link to="/"><Frame className="w-8 h-8 dark:text-white" /></Link> */}
-                
-                <Link to="/"><img src={logo} alt="logo" width={50} /></Link>
-                
-                {/* <Link to="/"> <Logo styles={"w-8 h-8"}/> </Link> */}
+                <Link to="/" className="relative flex items-center justify-center  dark:text-white"> 
+                    <KesnexusLogo className="relative w-16 h-16 text-primary dark:text-primary-dark"/> 
+                    <small className="font-medium text-xl absolute left-11">
+                        NEXUS 
+                        <span className="text-primary dark:text-primary-dark text-3xl">.</span>
+                    </small> 
+                </Link>
             </div>
 
             {/* navigation links for the header */}
