@@ -38,10 +38,10 @@ export default function Header () {
             {/* logo for the header */}
             <div className="cursor-pointer flex items-center">
                 {/* <Link to="/"><Frame className="w-8 h-8 dark:text-white" /></Link> */}
-                <img src={logo} alt="logo" width={50} />
-                {/* <Link to="/"> */}
-                    {/* <Logo styles={"w-8 h-8"}/> */}
-                {/* </Link> */}
+                
+                <Link to="/"><img src={logo} alt="logo" width={50} /></Link>
+                
+                {/* <Link to="/"> <Logo styles={"w-8 h-8"}/> </Link> */}
             </div>
 
             {/* navigation links for the header */}

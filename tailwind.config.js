@@ -13,7 +13,7 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#172554', // blue 950
-          dark: 'lightblue', // dark mode color
+          dark: 'skyblue', // dark mode color
           light: 'navy', // navy
         },
       }
