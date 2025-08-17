@@ -15,8 +15,24 @@ html{
 
 
 @layer components {
+  .nav{
+    @apply invisible md:visible opacity-0 md:opacity-100 flex space-x-8 font-medium transition ease-in-out duration-500 -translate-y-20 md:translate-y-0 w-0 h-0 md:w-auto;
+  }
+
+  .nav.open{
+    @apply opacity-100 flex flex-col absolute z-10 -left-4 top-0 py-16 space-x-0 space-y-2 p-5  bg-white dark:bg-black w-full h-auto shadow-xl translate-y-0 visible;
+  }
+
   .nav > *{
     @apply  text-black hover:text-primary dark:text-white dark:hover:text-primary-dark;
+  }
+
+  .nav.open > *{
+    @apply w-full text-center flex;
+  }
+  
+  .nav.open > * > a {
+    @apply w-full p-2 rounded transition ;
   }
 
   .sectionHeaders{
@@ -24,9 +40,12 @@ html{
   }
 
 
-
   .nav .active {
     @apply text-primary dark:text-primary-dark;
+  }
+
+  .nav.open > * > a.active {
+    @apply bg-primary-light dark:bg-primary-dark text-white dark:text-gray-800;
   }
 
   .themeBtn{
