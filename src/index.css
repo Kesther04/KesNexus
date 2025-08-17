@@ -16,7 +16,7 @@ html{
 
 @layer components {
   .nav{
-    @apply invisible md:visible opacity-0 md:opacity-100 flex space-x-8 font-medium transition ease-in-out duration-500 -translate-y-20 md:translate-y-0 w-0 h-0 md:w-auto;
+    @apply invisible md:visible opacity-0 md:opacity-100 flex space-x-8 font-medium transition ease-in-out duration-500 -translate-y-20 md:translate-y-0 w-0 h-0 md:w-auto md:h-auto;
   }
 
   .nav.open{
