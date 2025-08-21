@@ -92,7 +92,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-20 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
+      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-20 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
         ${headerStyle()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

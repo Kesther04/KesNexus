@@ -10,7 +10,7 @@ const fadeRight = {
 
 export default function Contact () {
     return (
-        <section className="flex flex-col py-20 px-2 md:px-32 min-h-full space-y-10 bg-gray-300 dark:bg-gray-900 dark:text-white" id="contact">
+        <section className="flex flex-col py-20 px-2 md:px-8 xl:px-32 min-h-full space-y-10 bg-gray-300 dark:bg-gray-900 dark:text-white" id="contact">
             <h1 className="sectionHeaders"><TypeWriter text="Get in Touch"/></h1>
 
             <h2 className="text-lg text-center md:text-left">Got a project or idea? Let’s connect and turn your vision into reality.</h2>

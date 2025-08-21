@@ -65,7 +65,7 @@ export default function AllProjects () {
             <Header/>
 
             <main>
-                <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
+                <section className="flex flex-col py-20 px-2 md:px-8 xl:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
                             
                     <h1 className="sectionHeaders"><TypeWriter text="Project Collection"/></h1>
 
@@ -98,7 +98,7 @@ export default function AllProjects () {
                         </Link>
                     </motion.div>
         
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-10">
                         {
                         
                             loading ? 

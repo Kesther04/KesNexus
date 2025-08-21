@@ -36,7 +36,7 @@ export default function ProjectCard ({index,project, load}: typeProjectCardProps
         >
 
             {/* Image */}
-            <div className="w-full h-64 md:h-96 overflow-hidden rounded-t-xl relative">
+            <div className="w-full h-64  md:h-96 overflow-hidden rounded-t-xl relative">
                 <img
                 src={project.image}
                 alt="test_img"

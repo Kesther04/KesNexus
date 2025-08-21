@@ -13,7 +13,7 @@ export default function About () {
     // This component renders the About section of the portfolio
     return (
         <motion.section
-            className="flex flex-col py-20 px-2 md:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about"
+            className="flex flex-col py-20 px-2 md:px-8 xl:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible
@@ -25,7 +25,7 @@ export default function About () {
 
             <div className="flex flex-col  justify-between space-y-5   w-full h-full">
 
-                <div className="md:w-full flex flex-col md:flex-row space-y-5 md:space-y-10 md:space-x-10">
+                <div className="md:w-full flex flex-col md:flex-row gap-5 md:gap-4 lg:gap-10 xl:gap-16 lg:justify-center lg:items-center">
                     {/* Profile Img */}
                     <motion.div 
                         className="w-auto h-full md:w-1/3 relative group m-2 md:m-0"
@@ -43,7 +43,7 @@ export default function About () {
                         </span>
                     </motion.div>
 
-                    <motion.div className="md:text-lg h-full w-auto md:w-2/3 md:p-5 text-center md:text-left space-y-4"
+                    <motion.div className="lg:text-lg h-full w-auto md:w-2/3 md:p-5 text-center md:text-left space-y-4"
                         variants={fadeInUp}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
@@ -61,7 +61,7 @@ export default function About () {
                 </div>
 
                 {/* about content */}
-                <motion.div className="w-auto md:w-full flex flex-col  md:p-20 space-y-5 text-center md:text-left"
+                <motion.div className="w-auto md:w-full flex flex-col  md:p-10 lg:p-20 space-y-5 text-center md:text-left"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.05 }}
