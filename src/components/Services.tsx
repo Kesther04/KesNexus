@@ -61,6 +61,9 @@ export default function Services () {
                     let delayTime = Number(`0.${index}`) + 0.2;
                     return (
                         <motion.div key={index} className="p-8 bg-white/70 dark:bg-black/70 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4 dark:text-white"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.01 }}
                         variants={fadeInUp}
                         transition={{duration: 0.6, delay: delayTime}}
                         >

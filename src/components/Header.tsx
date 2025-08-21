@@ -87,8 +87,6 @@ export default function Header() {
       styles = "shadow-md";
     }
 
-    console.log(styles);
-
     return styles;
   }
 
