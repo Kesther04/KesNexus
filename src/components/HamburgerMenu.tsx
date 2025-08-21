@@ -1,6 +1,11 @@
 
-export default function HamburgerMenu ({open, setOpen}:{open: boolean, setOpen:React.Dispatch<React.SetStateAction<boolean>>}) {
-    
+interface typeHamburgerMenuProps {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function HamburgerMenu ({open, setOpen}: typeHamburgerMenuProps) {
+
     return (
         <div
         onClick={() => setOpen(!open)}

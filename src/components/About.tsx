@@ -1,18 +1,37 @@
 import profile from "../assets/Images/profile.jpg";
 import AboutTab from "./AboutTab";
+import TypeWriter from "./TypeWriter";
+import { motion } from "framer-motion";
+
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function About () {
     // This component renders the About section of the portfolio
     return (
-        <section className="flex flex-col py-20 px-2 md:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about">
+        <motion.section
+            className="flex flex-col py-20 px-2 md:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible
+            transition={{ duration: 0.6 }}
+            variants={fadeInUp}    
+        >
 
-            <h1 className="sectionHeaders">About Me</h1>
+            <h1 className="sectionHeaders"><TypeWriter text="About Me"/></h1>
 
             <div className="flex flex-col  justify-between space-y-5   w-full h-full">
 
                 <div className="md:w-full flex flex-col md:flex-row space-y-5 md:space-y-10 md:space-x-10">
                     {/* Profile Img */}
-                    <div className="w-auto h-full md:w-1/3 relative group m-2 md:m-0">
+                    <motion.div 
+                        className="w-auto h-full md:w-1/3 relative group m-2 md:m-0"
+                        variants={fadeInUp}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         <span className="w-full h-full block rounded  overflow-hidden">
                             <img
                                 src={profile}
@@ -22,9 +41,12 @@ export default function About () {
                             {/* Overlay appears on hover */}
                             <span className="pointer-events-none absolute inset-0 rounded bg-primary/40 dark:bg-primary-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         </span>
-                    </div>
+                    </motion.div>
 
-                    <div className="md:text-lg h-full w-auto md:w-2/3 md:p-5 text-center md:text-left space-y-4">
+                    <motion.div className="md:text-lg h-full w-auto md:w-2/3 md:p-5 text-center md:text-left space-y-4"
+                        variants={fadeInUp}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
                         <p>Hi, I’m <strong>Kesther Ogbu</strong>, founder of <strong>KESNEXUS</strong>, a digital solutions brand helping businesses and individuals thrive online.</p>
 
                         <p>As a <strong>Full-Stack Developer</strong> and <strong>Copywriter</strong>, I combine the power of code with persuasive communication to create solutions that don’t just work, they perform.</p>
@@ -34,17 +56,20 @@ export default function About () {
                         <p>From seamless websites and apps to compelling marketing systems, I craft digital products and messages that capture attention, engage users, and turn ideas into revenue.</p>
 
 
-                    </div>
+                    </motion.div>
 
                 </div>
 
                 {/* about content */}
-                <div className="w-auto md:w-full flex flex-col  md:p-20 space-y-5 text-center md:text-left" id="skills">
+                <motion.div className="w-auto md:w-full flex flex-col  md:p-20 space-y-5 text-center md:text-left"
+                    variants={fadeInUp}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                >
                     
                     {/* skills tab */}
                     <AboutTab/>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     )
 }

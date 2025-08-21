@@ -1,16 +1,27 @@
 import { Icon } from '@iconify/react';
 import { Mail, Phone } from 'lucide-react';
+import TypeWriter from './TypeWriter';
+import { motion } from "framer-motion";
 
-
+const fadeRight = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
 
 export default function Contact () {
     return (
         <section className="flex flex-col py-20 px-2 md:px-32 min-h-full space-y-10 bg-gray-300 dark:bg-gray-900 dark:text-white" id="contact">
-            <h1 className="sectionHeaders">Get in Touch</h1>
+            <h1 className="sectionHeaders"><TypeWriter text="Get in Touch"/></h1>
 
             <h2 className="text-lg text-center md:text-left">Got a project or idea? Let’s connect and turn your vision into reality.</h2>
 
-            <div className="flex flex-col md:flex-row justify-between gap-20 py-6 w-full">
+            <motion.div className="flex flex-col md:flex-row justify-between gap-20 py-6 w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible
+            transition={{ duration: 0.6 }}
+            variants={fadeRight}    
+            >
 
                 {/* Contact Form */}
                 <div className='w-full md:w-2/3'>
@@ -31,7 +42,10 @@ export default function Contact () {
                 </div>
 
                 {/* Contact Information */}
-                <div className='flex flex-col justify-start space-y-10 w-1/3 text-lg'>
+                <motion.div className='flex flex-col justify-start space-y-10 w-1/3 text-lg'
+                    variants={fadeRight}
+                    transition={{duration:0.6, delay:0.1}}
+                >
 
                     <p className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark">
                         <span className="flex space-x-2 font-semibold"><Mail size={28} /> <span>Email</span></span>
@@ -57,8 +71,8 @@ export default function Contact () {
                             <Icon icon="mdi:github" className="text-gray-700 dark:text-gray-300 transition ease-in-out duration-200 hover:text-primary dark:hover:text-primary-dark" width="28" height="28" />
                         </a>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }

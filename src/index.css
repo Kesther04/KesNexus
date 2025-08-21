@@ -13,6 +13,9 @@ html{
     scroll-behavior: smooth;
 }
 
+main{
+  @apply bg-white dark:bg-black;
+}
 
 @layer components {
   .nav{
@@ -35,11 +38,6 @@ html{
     @apply w-full p-2 rounded transition ;
   }
 
-  .sectionHeaders{
-    @apply text-4xl font-semibold text-primary dark:text-primary-dark text-center md:text-left;
-  }
-
-
   .nav .active {
     @apply text-primary dark:text-primary-dark;
   }
@@ -47,6 +45,11 @@ html{
   .nav.open > * > a.active {
     @apply bg-primary-light dark:bg-primary-dark text-white dark:text-gray-800;
   }
+
+  .sectionHeaders{
+    @apply text-4xl font-semibold text-primary dark:text-primary-dark text-center md:text-left;
+  }
+
 
   .themeBtn{
     @apply mr-2 cursor-pointer w-6 h-6 dark:text-white;

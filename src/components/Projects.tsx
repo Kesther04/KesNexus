@@ -3,14 +3,37 @@ import { COPY_PROJECT_CRED } from '../data/copy';
 import { useEffect, useState } from "react"
 import ProjectCard from "./ProjectCard";
 import { Link } from 'react-router-dom';
+import TypeWriter from './TypeWriter';
+import { motion } from 'framer-motion';
 
 type projects = {
-        title: string,
-        image: string,
-        description: string,
-        stack: string[],
-        button: {label:string, link:string}[]
-    }[];
+    title: string,
+    image: string,
+    description: string,
+    stack: string[],
+    button: {label:string, link:string}[]
+}[];
+
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+// const containerVariants = {
+//   hidden: {},
+//   visible: {
+//     transition: {
+//       staggerChildren: 0.15, // delay between each child animation
+//     },
+//   },
+// };
+
+// const cardVariants = {
+//   hidden: { opacity: 0, y: -60 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+// };
+
 
 export default function Projects () {
     const [currentPj, setCurrentPj] = useState<"dev" | "copywriting">("dev"); // to swith between copywriting and dev
@@ -29,11 +52,20 @@ export default function Projects () {
         setLoading(false); 
     },[currentPj]);
     return (
-        <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
+        <motion.section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible
+            transition={{ duration: 0.6 }}
+            variants={fadeInUp}  
+        >
             
-            <h1 className="sectionHeaders">Here are my Projects</h1>
+            <h1 className="sectionHeaders"><TypeWriter text="Here are my Projects"/></h1>
 
-            <div className=" projectBtn">
+            <motion.div className=" projectBtn"
+                variants={fadeInUp}
+                transition={{duration: 0.6, delay: 0.2}}
+            >
                 <button 
                 className={` ${currentPj === "dev" ?  `current` : "" }`} 
                 onClick={()=>setCurrentPj("dev")}>
@@ -45,7 +77,7 @@ export default function Projects () {
                 onClick={()=>setCurrentPj("copywriting")}>
                     Copywriting Projects
                 </button>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                 {
@@ -54,7 +86,7 @@ export default function Projects () {
                         "Loading..." 
                         :
                     [...projects].slice(-4).reverse().map((project, index) => (
-                        <ProjectCard key={index} project={project} load={setLoading} />
+                        <ProjectCard key={index} index={index} project={project} load={setLoading}/>
                     ))
                 
                 }
@@ -70,6 +102,6 @@ export default function Projects () {
                 </Link>
             </div>
 
-        </section>
+        </motion.section>
     )
 }

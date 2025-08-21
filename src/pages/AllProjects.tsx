@@ -7,11 +7,15 @@ import ProjectCard from "../components/ProjectCard";
 import { DEV_PROJECT_CRED } from "../data/tech";
 import { COPY_PROJECT_CRED } from "../data/copy";
 import ScrollToTop from "../../utils/ScrollToTop";
-
+import TypeWriter from "../components/TypeWriter";
+import {motion} from "framer-motion";
 
 type projects = {
     title: string,image: string,description: string,stack: string[],button: {label:string, link:string}[]
 }[];
+
+
+
 
 export default function AllProjects () {
     let navigate = useNavigate();
@@ -63,13 +67,18 @@ export default function AllProjects () {
             <main>
                 <section className="flex flex-col py-20 px-2 md:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
                             
-                    <h1 className="sectionHeaders">Project Collection</h1>
+                    <h1 className="sectionHeaders"><TypeWriter text="Project Collection"/></h1>
 
                     <p className="italic md:text-lg text-center md:text-left ">
                         A curated collection of my Full-Stack Development and Copywriting projects, crafted to spark ideas and showcase impactful digital experiences.
                     </p>
         
-                    <div className="projectLinks">
+                    <motion.div 
+                        className="projectLinks"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
                         <Link to={"/projects"}
                         className={`${currentPj === "all" ? "current" : "" }`} 
                         onClick={()=>setCurrentPj("all")}>
@@ -87,7 +96,7 @@ export default function AllProjects () {
                         onClick={()=>setCurrentPj("copywriting")}>
                             Copywriting Projects
                         </Link>
-                    </div>
+                    </motion.div>
         
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                         {
@@ -99,7 +108,7 @@ export default function AllProjects () {
                                 () => Math.random() - 0.5
                             ).map(
                                 (project, index) => (
-                                    <ProjectCard key={index} project={project} load={setLoading} />
+                                    <ProjectCard key={index} index={index} project={project} load={setLoading} />
                                 )
                             )
                         

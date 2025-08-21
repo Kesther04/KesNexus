@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type React from "react";
 import { Fragment } from "react";
 
@@ -9,10 +10,30 @@ type projectForm = {
     button: {label:string, link:string}[]
 };
 
-export default function ProjectCard ({project, load}: {project: projectForm, load: React.Dispatch<React.SetStateAction<boolean>>}) {
-    return (
+interface typeProjectCardProps {
+    index:number;
+    project: projectForm;
+    load: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-        <div className="projectCard group">
+
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export default function ProjectCard ({index,project, load}: typeProjectCardProps) {
+    let delayTime = Number(`0.${index}`) + 0.3;
+    return ( 
+
+        <motion.div className="projectCard group" 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={fadeInUp}
+            transition={{duration:0.6, delay:delayTime}}
+        >
 
             {/* Image */}
             <div className="w-full h-64 md:h-96 overflow-hidden rounded-t-xl relative">
@@ -55,12 +76,12 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                         project.button.map((btn, index) => (
                             <Fragment key={index}>
                                 {index > 0 ? (
-                                    <a href={btn.link}
+                                    <a href={btn.link} target="_blank"
                                         className="bg-gray-500 hover:bg-gray-500/50 text-white rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left">
                                         {btn.label}
                                     </a>
                                 ) : (
-                                    <a href={btn.link} 
+                                    <a href={btn.link} target="_blank"
                                         className="bg-primary-light hover:bg-primary-light/50 dark:bg-primary-dark dark:hover:bg-primary-dark/40 text-white dark:hover:text-white dark:text-gray-800 rounded px-4 py-2 transition duration-300 ease-in-out text-center md:text-left ">
                                         {btn.label}
                                     </a>
@@ -70,7 +91,7 @@ export default function ProjectCard ({project, load}: {project: projectForm, loa
                     }
                 </span>
             </div>
-        </div>
+        </motion.div>
 
 
     )
