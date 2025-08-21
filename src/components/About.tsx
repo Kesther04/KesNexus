@@ -62,6 +62,9 @@ export default function About () {
 
                 {/* about content */}
                 <motion.div className="w-auto md:w-full flex flex-col  md:p-20 space-y-5 text-center md:text-left"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.05 }}
                     variants={fadeInUp}
                     transition={{ duration: 0.6, delay: 0.6 }}
                 >
