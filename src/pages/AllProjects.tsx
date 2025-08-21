@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { DEV_PROJECT_CRED } from "../data/tech";
 import { COPY_PROJECT_CRED } from "../data/copy";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 
 type projects = {
@@ -56,6 +57,7 @@ export default function AllProjects () {
     console.log(currentPj);
     return (
         <>
+            <ScrollToTop />
             <Header/>
 
             <main>
