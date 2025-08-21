@@ -31,8 +31,18 @@ export default function Header () {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    
-    
+    // to handle nav display based on page size
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize); // to detect when a browser window is resized / changed
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <header className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-20  fixed bg-white/80 dark:bg-black/80 w-full backdrop-blur-sm z-50  ${scrolled ? "shadow-md" : ""}`}>
 
