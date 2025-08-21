@@ -30,7 +30,7 @@ export default function ProjectCard ({index,project, load}: typeProjectCardProps
         <motion.div className="projectCard group" 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.01 }}
             variants={fadeInUp}
             transition={{duration:0.6, delay:delayTime}}
         >

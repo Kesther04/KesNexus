@@ -27,11 +27,11 @@ main{
   }
 
   .nav > *{
-    @apply  text-black hover:text-primary dark:text-white dark:hover:text-primary-dark;
+    @apply   hover:text-primary dark:text-white dark:hover:text-primary-dark;
   }
 
   .nav.open > *{
-    @apply w-full text-center flex;
+    @apply w-full text-center flex text-black dark:text-white;
   }
   
   .nav.open > * > a {
@@ -52,7 +52,7 @@ main{
 
 
   .themeBtn{
-    @apply mr-2 cursor-pointer w-6 h-6 dark:text-white;
+    @apply mr-2 cursor-pointer w-6 h-6;
   }
 
   .skillsTabHead > button{

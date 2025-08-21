@@ -20,34 +20,34 @@ export default function Header() {
 
   // Handle header shadow on scroll
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 100);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  const handleScroll = () => setScrolled(window.scrollY > 100);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-    // to set active section based on scroll position
-    useEffect(() => {
-        const sections = document.querySelectorAll("section[id]");
-        if (!sections.length) return;
+  // to set active section based on scroll position
+  useEffect(() => {
+      const sections = document.querySelectorAll("section[id]");
+      if (!sections.length) return;
 
-        const handleScroll = () => {
-            let current = activeSection;
+      const handleScroll = () => {
+          let current = activeSection;
 
-            sections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                current = section.id;
-            }
-            });
+          sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+              current = section.id;
+          }
+          });
 
-            setActiveSection(current);
-        };
+          setActiveSection(current);
+      };
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll(); // run once on mount
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll(); // run once on mount
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [activeSection]);
+      return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeSection]);
 
   // Close mobile menu on resize if width > md
   useEffect(() => {
@@ -64,11 +64,38 @@ export default function Header() {
     if (window.innerWidth < 768) setOpen(false); // close mobile menu
   };
 
+  //header styling alloter
+  function headerStyle() {
+    let styles:string = "";
+    
+
+    if (scrolled) {
+      styles = "shadow-md ";
+    }
+
+    // if (!scrolled) {
+    //   styles = "text-white";
+    // }
+
+    
+    // if (open) {
+    //   styles = "text-black dark:text-white ";
+    // }
+
+
+    if (projectDir[1] === "projects") {
+      styles = "shadow-md";
+    }
+
+    console.log(styles);
+
+    return styles;
+  }
+
   return (
     <motion.header
-      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-20 fixed bg-white/80 dark:bg-black/80 w-full backdrop-blur-sm z-50 ${
-        scrolled ? "shadow-md" : ""
-      }`}
+      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-20 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
+        ${headerStyle()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}

@@ -24,7 +24,7 @@ const Logo: React.FC<LogoProps> = ({
     </defs>
 
     {/* Ground shadow */}
-    <ellipse
+    {/* <ellipse
       cx="110"
       cy="224"
       rx="70"
@@ -32,7 +32,7 @@ const Logo: React.FC<LogoProps> = ({
       fill="#9FA3A8"
       opacity="0.45"
       filter="url(#blur)"
-    />
+    /> */}
 
     {/* Stylized K */}
     <g transform="translate(0, 6)" fill="currentColor">

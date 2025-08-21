@@ -57,21 +57,22 @@ export default function Services () {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                {services.map((service, index) => (
-                    <motion.div key={index} className="p-8 bg-white/70 dark:bg-black/70 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4 dark:text-white"
-                    variants={fadeInUp}
-                    transition={
-                        index > 2 ? { duration: 0.6, delay: 0.4 } : {duration: 0.6, delay: 0.2}
-                    }
-                    >
-                        {/* icon */}
-                        <div className="text-4xl mb-4"><Icon icon={service.icon} className='text-primary-light dark:text-primary-dark' /></div>
-                        {/* service */}
-                        <h2 className="text-xl font-semibold mb-2">{service.service}</h2>
-                        {/* service description */}
-                        <p>{service.description}</p>  
-                    </motion.div>
-                ))}
+                {services.map((service, index) => {
+                    let delayTime = Number(`0.${index}`) + 0.2;
+                    return (
+                        <motion.div key={index} className="p-8 bg-white/70 dark:bg-black/70 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center md:items-start text-center md:text-left space-y-4 dark:text-white"
+                        variants={fadeInUp}
+                        transition={{duration: 0.6, delay: delayTime}}
+                        >
+                            {/* icon */}
+                            <div className="text-4xl mb-4"><Icon icon={service.icon} className='text-primary-light dark:text-primary-dark' /></div>
+                            {/* service */}
+                            <h2 className="text-xl font-semibold mb-2">{service.service}</h2>
+                            {/* service description */}
+                            <p>{service.description}</p>  
+                        </motion.div>
+                    )
+                })}
             </div>
         </motion.section>
     );

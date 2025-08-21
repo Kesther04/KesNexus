@@ -9,7 +9,7 @@ export default function HamburgerMenu ({open, setOpen}: typeHamburgerMenuProps) 
     return (
         <div
         onClick={() => setOpen(!open)}
-        className="menu-btn relative z-50 w-6 h-6 cursor-pointer text-black dark:text-white flex items-center justify-center md:hidden"
+        className="menu-btn relative z-50 w-6 h-6 cursor-pointer flex items-center justify-center md:hidden"
         >
         <span
             className={`menu-btn__burger relative block w-5 h-[3px] rounded-sm bg-current transition-all duration-300 ease-in-out
