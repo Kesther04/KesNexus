@@ -70,7 +70,7 @@ export default function Header() {
     
 
     if (scrolled) {
-      styles = "shadow-md ";
+      styles = "shadow-md";
     }
 
     // if (!scrolled) {
@@ -92,16 +92,16 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-20 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
+      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-28 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
         ${headerStyle()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
       {/* Logo */}
-      <div className="relative cursor-pointer flex items-center z-50">
+      <div className="relative cursor-pointer flex items-center z-50 ">
         <Link to="/" className="absolute flex items-center justify-center dark:text-white">
-          <Logo className="w-14 h-14 text-primary dark:text-primary-dark" />
+          <Logo className="w-10 h-10 text-primary dark:text-primary-dark" />
           <LogoAttachment />
         </Link>
       </div>

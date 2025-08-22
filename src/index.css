@@ -27,7 +27,7 @@ main{
   }
 
   .nav > *{
-    @apply   hover:text-primary dark:text-white dark:hover:text-primary-dark;
+    @apply   hover:text-primary dark:text-white dark:hover:text-primary-dark pt-1;
   }
 
   .nav.open > *{
