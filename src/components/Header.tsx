@@ -2,8 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-import LogoAttachment from "../assets/LogoAttachment";
-import Logo from "../assets/Logo";
+import lightLogo from "../assets/Images/logo_light.png";
+import darkLogo from "../assets/Images/logo_dark.png";
 import HamburgerMenu from "./HamburgerMenu";
 import {motion} from "framer-motion";
 
@@ -90,19 +90,21 @@ export default function Header() {
     return styles;
   }
 
+  // to get the current logo based on the theme
+  const currentLogo = theme === "dark" ? darkLogo : lightLogo;
+
   return (
     <motion.header
-      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-28 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
+      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-32 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
         ${headerStyle()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
       {/* Logo */}
-      <div className="relative cursor-pointer flex items-center z-50 ">
-        <Link to="/" className="absolute flex items-center justify-center dark:text-white">
-          <Logo className="w-10 h-10 text-primary dark:text-primary-dark" />
-          <LogoAttachment />
+      <div className="cursor-pointer flex items-center z-50 ">
+        <Link to="/" className="flex items-center justify-center ">
+          <img src={currentLogo} alt="Logo" className="w-28 absolute top-5 left-5 md:left-10 lg:left-32" />
         </Link>
       </div>
 
