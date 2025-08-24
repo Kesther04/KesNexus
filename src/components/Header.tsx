@@ -66,24 +66,17 @@ export default function Header() {
   //header styling alloter
   function headerStyle() {
     let styles:string = "";
-    
-
-    if (scrolled) {
-      styles = "shadow-md  bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm";
-    }
 
     if (!scrolled) {
       styles = "text-white";
-    }
+    }    
 
-    
-    if (open) {
-      styles = "text-black dark:text-white ";
-    }
-
-
-    if (projectDir[1] === "projects") {
+    if (scrolled || projectDir[1] === "projects") {
       styles = "shadow-md  bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm";
+    }
+
+    if (open) {
+      styles = "text-black dark:text-white bg-white/80   dark:bg-black/80 backdrop-blur-sm";
     }
 
     return styles;
