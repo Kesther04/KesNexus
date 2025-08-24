@@ -2,10 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-import lightLogo from "../assets/Images/logo_light.png";
-import darkLogo from "../assets/Images/logo_dark.png";
 import HamburgerMenu from "./HamburgerMenu";
 import {motion} from "framer-motion";
+import Logo from "../assets/Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,32 +69,29 @@ export default function Header() {
     
 
     if (scrolled) {
-      styles = "shadow-md";
+      styles = "shadow-md  bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm";
     }
 
-    // if (!scrolled) {
-    //   styles = "text-white";
-    // }
+    if (!scrolled) {
+      styles = "text-white";
+    }
 
     
-    // if (open) {
-    //   styles = "text-black dark:text-white ";
-    // }
+    if (open) {
+      styles = "text-black dark:text-white ";
+    }
 
 
     if (projectDir[1] === "projects") {
-      styles = "shadow-md";
+      styles = "shadow-md  bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm";
     }
 
     return styles;
   }
 
-  // to get the current logo based on the theme
-  const currentLogo = theme === "dark" ? darkLogo : lightLogo;
-
   return (
     <motion.header
-      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-32 fixed w-full  z-50 bg-white/80   dark:bg-black/80 text-black dark:text-white backdrop-blur-sm
+      className={`flex items-center justify-between space-x-4 py-4 px-2 md:px-8 xl:px-32 fixed w-full  z-50
         ${headerStyle()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -104,7 +100,7 @@ export default function Header() {
       {/* Logo */}
       <div className="cursor-pointer flex items-center z-50 ">
         <Link to="/" className="flex items-center justify-center ">
-          <img src={currentLogo} alt="Logo" className="w-28 absolute top-5 left-5 md:left-10 lg:left-32" />
+          <Logo/>
         </Link>
       </div>
 
