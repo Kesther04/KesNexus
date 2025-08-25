@@ -2,7 +2,12 @@ import { motion } from "framer-motion";
 import { Download, Mail } from "lucide-react";
 import TypeWriter from "./TypeWriter";
 
-export default function Hero () {
+export default function Hero () {  
+    // Smooth scroll to section
+    const handleScrollTo = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <section className="flex flex-col items-center justify-center h-screen bg-hero bg-cover bg-center text-gray-200 z-10 relative"id="home">
         <div className="absolute inset-0 backdrop-blur-lg bg-black/40 dark:bg-black/80"></div>
@@ -61,6 +66,10 @@ export default function Hero () {
             <a
                 href="#contact"
                 className="flex gap-2 px-6 py-3 border border-white/30 text-white rounded-lg hover:bg-white/10 transition"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollTo("contact");
+                }}
             >
                 <Mail size={18} className="relative top-0.5" /> Contact Me
             </a>
