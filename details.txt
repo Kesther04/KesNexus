@@ -1,0 +1,81 @@
+Portfolio Update
+
+for profile pic
+| DO ✅                             | DON'T ❌                           |
+| -------------------------------- | --------------------------------- |
+| Use circular or rounded corners  | Use harsh rectangles              |
+| Add soft shadows or gradients    | Leave it flat and lifeless        |
+| Keep background clean or blurred | Use noisy/cluttered backgrounds   |
+| Animate on scroll/hover subtly   | Add loud motion or entrance zooms |
+
+- apply google fonts & improve dark/light mode toggle
+- apply a glassmorphism / neuromorphism design touch to the overview of the site
+- improve speed & responsiveness
+- improve about me section, customize logo and profile pic for personal touch
+- services will retain it's present appearance with a few tweaks in ui 
+
+
+for skills (will be applied as a tab)
+🔧 Dev Stack
+[⚛ React]  [🌀 Remix]  [🐘 PHP]  [🗃 MySQL]  [🎨 Tailwind]
+
+📢 Copy Stack
+[✉️ Email Sequencing]  [📈 Funnels]  [🧠 Strategy]  [🛍 Offers]
+
+- then we have the testimonial part for the screenshots of msgs or DMS with byline under them ( basically going to be stacked in 2 columns )
+
+-optional for contacts
+📬 Let's Connect
+
+Email: kesther@example.com  
+Phone: +234-XXX-XXX-XXXX  
+Socials: [Twitter] [LinkedIn] [GitHub]  
+
+
+//for About tab section
+| Dev Stack Tab               | Copy Stack Tab                     |
+| --------------------------- | ---------------------------------- |
+| Logos/icons like React, PHP | Pill tags like “Email Copy”        |
+| Tools like Git, Tailwind    | Tools like Notion, Docs, Grammarly |
+| Concepts like API, Auth     | Frameworks like AIDA, PAS          |
+
+| Dev Section  | Copy Equivalent |
+| ------------ | --------------- |
+| **Frontend** | **Copy Types**  |
+| **Backend**  | **Frameworks**  |
+| **Tools**    | **Copy Tools**  |
+
+// for Project card
+
+// for dev
+[Preview Image / GIF of app]
+Project Title
+Short description (what it does, built with…)
+Tech stack icons
+Buttons: [Live Demo] [GitHub]
+
+// for copy
+[Thumbnail image or relevant graphic]
+Project Title
+Type of copy: (e.g. Sales Page, Email Series)
+Context: (e.g. for a SaaS client, personal project, etc.)
+CTA buttons: [View Sample] [Case Study] [PDF]
+
+NOTE: filter on main homepage for dev & copy, 3 -4 cards for each, then view all button for each dev & copy
+
+dev -> /projects/dev
+copy -> /projects/copy
+all -> /projects
+
+- @copyright 2025 | All rights reserved
+
+
+- downgraded version of tailwindcss for postcss.config.js and tailwind.config.js creation 
+npm install -D tailwindcss@3.4.3 postcss autoprefixer
+npx tailwindcss init -p
+
+npm install lucide-react (for access to react icons)
+npm install @iconify/react (for more icons used in Frameworks)
+
+vercel.json added to root dir to solve react router dom & vercel issue
+npm install framer-motion // for seamless animation
