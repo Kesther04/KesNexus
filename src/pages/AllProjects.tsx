@@ -65,7 +65,7 @@ export default function AllProjects () {
             <Header/>
 
             <main>
-                <section className="flex flex-col py-20 px-2 md:px-8 xl:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects">
+                <section className="flex flex-col py-20 px-2 md:px-8 xl:px-32  space-y-10  h-auto dark:bg-black dark:text-white" id="projects">
                             
                     <h1 className="sectionHeaders"><TypeWriter text="Project Collection"/></h1>
 
