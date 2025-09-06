@@ -13,7 +13,7 @@ export default function About () {
     // This component renders the About section of the portfolio
     return (
         <motion.section
-            className="flex flex-col py-20 px-2 md:px-8 xl:px-32 min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about"
+            className="flex flex-col py-20 px-2 md:px-8 xl:px-32 h-auto md:min-h-screen  space-y-4 dark:bg-black dark:text-white" id="about"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible

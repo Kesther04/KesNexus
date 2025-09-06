@@ -52,7 +52,7 @@ export default function Projects () {
         setLoading(false); 
     },[currentPj]);
     return (
-        <motion.section className="flex flex-col py-20 px-2 md:px-8 xl:px-32  space-y-10  min-h-screen dark:bg-black dark:text-white" id="projects"
+        <motion.section className="flex flex-col py-20 px-2 md:px-8 xl:px-32  space-y-10 h-auto md:min-h-screen dark:bg-black dark:text-white" id="projects"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }} // triggers when 10% of section is visible
