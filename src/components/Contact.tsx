@@ -4,6 +4,7 @@ import TypeWriter from './TypeWriter';
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { useRef, useState } from 'react';
+import FormMsg from './FormMsg';
 
 const fadeRight = {
   hidden: { opacity: 0, x: -50 },
@@ -14,35 +15,33 @@ export default function Contact () {
     const form = useRef<HTMLFormElement | null>(null) as React.MutableRefObject<HTMLFormElement>;
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
 
     const templateParams: { time: string } = {
         time: new Date().toLocaleString(),
     };
 
 
-    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
-        emailjs
-        .sendForm(
-            "service_k768gds",   // service ID from EmailJS dashboard
-            "template_pv6e9ix",  // template ID from EmailJS dashboard
-            form.current,
-            "ZGSOeuGWJ8TQwjNZB"    // public key from EmailJS dashboard
-        )
-        .then(
-            (result: any) => {
-            console.log(result.text);
-            setSuccess(true);
+        try {
+            await emailjs.sendForm(
+                "service_k768gds",   // service ID from EmailJS dashboard
+                "template_pv6e9ix",  // template ID from EmailJS dashboard
+                form.current,
+                "ZGSOeuGWJ8TQwjNZB"    // public key from EmailJS dashboard
+            );
             form.current.reset();
+            setSuccess(true);
+        } catch (error) {
+            console.log(error);
+            setError(true);
+        } finally {
             setLoading(false);
-            },
-            (error: any) => {
-            console.log(error.text);
-            setLoading(false);
-            }
-        );
+        }
+        
     };
 
     return (
@@ -52,21 +51,23 @@ export default function Contact () {
 
             <h2 className="text-lg text-center md:text-left">Got a project or idea? Let’s connect and turn your vision into reality.</h2>
 
-            {success && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-                <div className="bg-white dark:bg-gray-900 border border-gray-500 rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 scale-100 animate-fadeIn">
-                <h2 className="text-primary dark:text-primary-dark text-xl font-semibold mb-2">Message Sent!</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Your message was sent successfully.
-                </p>
-                <button
-                    onClick={() => setSuccess(false)}
-                    className="px-4 py-2 bg-primary dark:bg-primary-dark text-white rounded-lg hover:bg-primary/60 dark:hover:bg-primary-dark/60 transition"
-                >
-                    Close
-                </button>
-                </div>
-            </div>
+            {(success) && (
+            <FormMsg
+                setDisplay={setSuccess}
+                styles="text-primary dark:text-primary-dark"
+                firstMsg="Success!"
+                secondMsg="Your message was sent successfully."
+            />
+            )}
+
+
+            {(error) && (
+                <FormMsg
+                    setDisplay={setError}
+                    styles="text-red-700 dark:text-red-500"
+                    firstMsg="Error!"
+                    secondMsg="There was an error sending your message."
+                />
             )}
 
             <motion.div className="flex flex-col md:flex-row justify-between gap-20 py-6 w-full"
