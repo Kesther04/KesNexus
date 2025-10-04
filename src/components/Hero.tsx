@@ -57,7 +57,7 @@ export default function Hero () {
             transition={{ delay: 0.8, duration: 0.6 }}
             >
             <a
-                href="/kesther_ogbu_cv.docx"
+                href="/Kesther_Ogbu_Resume.pdf"
                 download
                 className="flex gap-2 px-6 py-3 bg-primary dark:bg-primary-dark dark:text-gray-800 dark:hover:bg-primary-dark/40 dark:hover:text-white text-white rounded-lg hover:bg-blue-800 transition"
             >
